@@ -1,6 +1,6 @@
 ---
 - name: Playbook ping localhost
-  hosts: all
+  hosts: local
   tasks:
     - name: Ping localhost server
       ping:
