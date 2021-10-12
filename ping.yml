@@ -4,3 +4,7 @@
   tasks:
     - name: Ping localhost server
       ping:
+    - name: Show variable 'ansible_test'
+      debug:
+        msg: "Varable 'ansible_test': {{ ansible_test }}"
+      when: ansible_test is defined
