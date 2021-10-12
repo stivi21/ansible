@@ -1,0 +1,4 @@
+[local]
+172.16.4.24
+[local:vars]
+ansible_user=ubuntu
