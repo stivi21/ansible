@@ -30,5 +30,4 @@
       git:
         repo: https://github.com/stivi21/ansible.git
         dest: /tmp/kura
-        single_branch: yes
         version: master
