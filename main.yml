@@ -1,0 +1,26 @@
+- name: Test
+  hosts: localhost
+  connection: local
+  gather_facts: false
+  tasks:
+    - name: Check environment domain setting
+      fail:
+        msg: "Variable 'env_domain' must be specified and cannot be blank. Check inventory."
+      when: env_domain is not defined or (env_domain | length == 0)
+
+    - name: Check subdomain setting
+      fail:
+        msg: "Variable 'subdomain' must be specified and cannot be blank."
+      when: subdomain is not defined or (subdomain | length == 0)
+
+    - name: Check action setting
+      fail:
+        msg: "Variable 'action' must be 'add' or 'delete'."
+      when: action is not defined or (action != 'add' and action != 'delete')
+
+    - name: Clone
+      git:
+        repo: https://github.com/stivi21/ansible.git
+        dest: /tmp/kura
+        single_branch: yes
+        version: master
