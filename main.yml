@@ -5,10 +5,10 @@
   tasks:
     - name: Debug variables
       debug:
-        msg: "vars[item]: {{item}}"
+        msg: "{{item}}: {{vars[item]}}"
       loop:
         - env_domain
-        - dubdomain
+        - subdomain
         - action
         
     - name: Check environment domain setting
