@@ -3,6 +3,14 @@
   connection: local
   gather_facts: false
   tasks:
+    - name: Debug variables
+      debug:
+        msg: "vars[item]: {{item}}"
+      loop:
+        - env_domain
+        - dubdomain
+        - action
+        
     - name: Check environment domain setting
       fail:
         msg: "Variable 'env_domain' must be specified and cannot be blank. Check inventory."
